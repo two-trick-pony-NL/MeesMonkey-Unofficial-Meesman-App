@@ -4,7 +4,7 @@
     "slug": "MeesmanUnofficial",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/MeesmanIcon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/MeesmanSplash.png",
@@ -15,7 +15,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.petervandoorn.MeesmanUnofficial"
     },
     "android": {
       "adaptiveIcon": {

@@ -33,7 +33,7 @@ const RendementScreen = ({ data, graphdata, onBackToPortfolio }) => {
   const totalReturnWithTwoDecimal = (1 + totalReturnFloat/100).toFixed(2);
 
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
           <View style={{ height: 50 }} />
 
       <SafeAreaView style={styles.container}>

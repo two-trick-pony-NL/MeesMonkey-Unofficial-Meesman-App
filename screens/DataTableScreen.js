@@ -57,7 +57,7 @@ const TransactionTable = ({ data, onBackToPortfolio }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <ScrollView       showsVerticalScrollIndicator={false}>
         <SectionHeaderText text={"Transacties"}></SectionHeaderText>
         <View style={styles.yearContainer}>
           <DataTable>

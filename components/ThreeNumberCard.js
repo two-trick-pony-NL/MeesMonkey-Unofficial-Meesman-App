@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   },
   card: {
     flex: 1,
-    backgroundColor: '#CFBAE1',
+    backgroundColor: '#fff',
     borderRadius: 16,
     padding: 20,
     alignItems: 'center',
@@ -78,6 +78,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 3,
     marginBottom: 5,
+    borderColor: '#384956',
+    borderWidth: 2,
   },
   explainerText: {
     fontSize: 16,
@@ -87,7 +89,7 @@ const styles = StyleSheet.create({
   bigNumber: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#000',
+    color: '#384956',
   },
 });
 

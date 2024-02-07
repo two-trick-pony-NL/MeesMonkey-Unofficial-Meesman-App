@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, Dimensions } from 'react-native';
+import { View, Text, Dimensions } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
 import { Rect } from 'react-native-svg';
 
@@ -42,7 +42,7 @@ const HistoricDataChart = ({graphdata}) => {
 
   return (
     <View>
-      <View style={{borderBlockColor:'#384956', borderWidth:4}}>
+      <View >
         <LineChart
           data={{
             legend: ["Aankoopprijs", "Huidige waarde"],
@@ -78,9 +78,6 @@ const HistoricDataChart = ({graphdata}) => {
             decimalPlaces: 0,
             color: (opacity = 1) => `rgba(200, 200, 200, ${opacity})`,
             labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-            style: {
-              borderRadius: 16,
-            },
             propsForDots: {
               r: '6',
               strokeWidth: '2',
@@ -96,12 +93,14 @@ const HistoricDataChart = ({graphdata}) => {
             marginVertical: 5,
             marginHorizontal: 5,
             borderRadius: 16,
-            width: Dimensions.get('window').width,
+            width: Dimensions.get('window').width-5,
             elevation: 3, // for Android shadow
             shadowColor: '#000',
             shadowOffset: { width: 0, height: 2 },
             shadowOpacity: 0.2,
             shadowRadius: 3,
+            borderBlockColor:'#384956', 
+            borderWidth:2
           }}
           onDataPointClick={({ value }) => {
             setSelectedLabel(value || ''); // Set the selected label when a data point is clicked
