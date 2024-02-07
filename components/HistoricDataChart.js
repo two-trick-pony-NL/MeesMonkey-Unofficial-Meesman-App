@@ -26,7 +26,7 @@ const HistoricDataChart = ({graphdata}) => {
   const transformedData = graphdata.map((data, index) => ({
       timestamps: data.map(([timestamp]) => timestamp),
       amounts: data.map(([, amount]) => amount),
-      color: index === 0 ? 'rgba(100, 100, 100, 0.4)' : 'rgba(0, 0, 0, 1)', // Black and light grey colors
+      color: index === 0 ? 'rgba(164,255,92,1)' : 'rgba(87,184,187,1)', // Black and light grey colors
     }));
 
   // Determine the time interval
@@ -42,7 +42,7 @@ const HistoricDataChart = ({graphdata}) => {
 
   return (
     <View>
-      <View>
+      <View style={{borderBlockColor:'#384956', borderWidth:4}}>
         <LineChart
           data={{
             legend: ["Aankoopprijs", "Huidige waarde"],
@@ -73,8 +73,8 @@ const HistoricDataChart = ({graphdata}) => {
               formToTextSpace: 5,
               wordWrapEnabled: true,
             },
-            backgroundGradientFrom: '#CFBAE1',
-            backgroundGradientTo: '#C59FC9',
+            backgroundGradientFrom: 'rgba(255,255,255,1)',
+            backgroundGradientTo: 'rgba(255,255,255,1)',
             decimalPlaces: 0,
             color: (opacity = 1) => `rgba(200, 200, 200, ${opacity})`,
             labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,

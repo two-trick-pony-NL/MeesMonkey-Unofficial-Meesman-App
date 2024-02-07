@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { ScrollView, Text, View, StyleSheet, SafeAreaView} from 'react-native';
 import WaardeOntwikkeling from '../components/WaardeOntwikkelingPerJaar';
 import NumberCard from '../components/NumberCard';
+import NumbercardGradient from '../components/NumberCardGradient';
 import SectionHeaderText from '../components/SectionHeaderText';
 import HistoricDataChart from '../components/HistoricDataChart';
 import SubheadingWithDescription from '../components/SubheadingWithDescription';
-import NumbercardGradient from '../components/NumberCardGradient';
 
 
 const RendementScreen = ({ data, graphdata, onBackToPortfolio }) => {
