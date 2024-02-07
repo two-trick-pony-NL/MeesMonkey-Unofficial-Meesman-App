@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
     marginBottom: 5,
     borderColor: '#384956',
-    borderWidth: 2,
+    borderWidth: 1,
   },
   explainerText: {
     fontSize: 16,
