@@ -11,15 +11,17 @@ import RendementScreen from './RendementScreen';
 import SimpleComponent from '../components/simplecomponent';
 
 
-const HomeScreen = ({ data}) => {
+const HomeScreen = ({ data, graphdata}) => {
   const accountsData = data && data.accounts;
   const portefeuilleData = data && data["portefeuille"]
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <SafeAreaView>
 
       <SectionHeaderText text={'Portfolio'}/>
+      <HistoricDataChart graphdata={graphdata} />
+
       <SubheadingWithDescription subheading={'Rekeningen'} description={'Dit is het saldo op jouw beleggingsrekeningen'}/>
 
         {accountsData && accountsData.map(account => {

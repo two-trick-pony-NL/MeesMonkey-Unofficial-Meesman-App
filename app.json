@@ -1,11 +1,20 @@
 {
   "expo": {
+    
     "name": "MeesmanUnofficial",
     "slug": "MeesmanUnofficial",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/MeesmanIcon.png",
     "userInterfaceStyle": "light",
+    "plugins": [
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Allow Meesman to use Face ID."
+        }
+      ]
+    ],
     "splash": {
       "image": "./assets/MeesmanSplash.png",
       "resizeMode": "contain",

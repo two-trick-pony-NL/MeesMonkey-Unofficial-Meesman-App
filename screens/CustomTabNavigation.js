@@ -12,7 +12,7 @@ const CustomTabBar = (data) => {
   const renderScreen = () => {
     switch (activeScreen) {
       case 'Portfolio':
-        return <HomeScreen data={data.data} GoToTransactions={() => setActiveScreen('Transacties')} GoToRendementen={() => setActiveScreen('Rendementen')} />;
+        return <HomeScreen data={data.data} graphdata={data.data['historic_data']} GoToTransactions={() => setActiveScreen('Transacties')} GoToRendementen={() => setActiveScreen('Rendementen')} />;
       case 'Rendementen':
         return <RendementScreen data={data['data']} graphdata={data.data['historic_data']} onBackToPortfolio={() => setActiveScreen('Portfolio')} />;
       case 'Transacties':

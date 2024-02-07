@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, ActivityIndicator } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TextInput, Button, StyleSheet, ActivityIndicator, TouchableOpacity, Linking, Image } from 'react-native';
 import getAuthToken from '../api/AuthApi';
+
 
 const LoginScreen = ({ onLogin }) => {
   const [username, setUsername] = useState('');
@@ -9,32 +10,39 @@ const LoginScreen = ({ onLogin }) => {
 
   const handleLogin = async () => {
     try {
-      setLoading(true); // Set loading to true before making the API call
-
-      // Convert the username to lowercase
+      setLoading(true);
       const lowercasedUsername = username.toLowerCase();
-
       const token = await getAuthToken(lowercasedUsername, password);
       onLogin(token);
     } catch (error) {
-      alert('Login failed. Please check your credentials.'); // Display an error message
+      alert('Login failed. Please check your credentials.');
     } finally {
-      setLoading(false); // Set loading to false after the API call is complete
+      setLoading(false);
     }
+  };
+
+  const handleWebLinkPress = () => {
+    // Open the webpage when the subtext is pressed
+    // Replace 'https://your-website.com' with your actual webpage URL
+    Linking.openURL('https://github.com/two-trick-pony-NL/MeesmanUnofficialApp');
   };
 
   return (
     <View style={styles.container}>
+      <Image source={require('../assets/MeesmanIcon.png')} style={styles.logo} />
+
       <Text style={styles.title}>Login</Text>
       <TextInput
         style={styles.input}
-        placeholder="Enter your username"
+        placeholder="Gebruikersnaam"
+        placeholderTextColor="white"
         value={username}
         onChangeText={(text) => setUsername(text)}
       />
       <TextInput
         style={styles.input}
-        placeholder="Enter your password"
+        placeholder="Wachtwoord"
+        placeholderTextColor="white"
         secureTextEntry
         value={password}
         onChangeText={(text) => setPassword(text)}
@@ -43,10 +51,14 @@ const LoginScreen = ({ onLogin }) => {
 
       {loading && (
         <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color="blue" />
-          <Text style={styles.loadingText}>Logging in...</Text>
+          <ActivityIndicator size="large" color="white" />
         </View>
       )}
+        <Text style={styles.subtextnormal}>Deze app wordt niet officieel onersteund door Meesman indexbeleggen. Gebruik is voor eigen risico. De die je hier invoert worden versleuteld op jouw telefoon bewaard.</Text>
+
+      <TouchableOpacity onPress={handleWebLinkPress}>
+        <Text style={styles.subtext}>Meer weten</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -57,15 +69,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
+    backgroundColor: '#384956',
+  },
+  logo: {
+    width: 250, // Adjust the width according to your design
+    height: 250, // Adjust the height according to your design
+    marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 16,
+    color: '#fff',
   },
   input: {
     height: 40,
-    borderColor: 'gray',
+    borderColor: 'white',
+    color: 'white',
     borderWidth: 1,
     marginBottom: 16,
     paddingHorizontal: 10,
@@ -80,10 +100,24 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#384956',
+    color: 'white',
   },
   loadingText: {
     marginTop: 10,
     fontSize: 16,
+    color: 'white',
+  },
+  subtext: {
+    marginTop: 20,
+    fontSize: 10,
+    color: 'lightgray',
+    textDecorationLine: 'underline',
+  },
+  subtextnormal: {
+    marginTop: 20,
+    fontSize: 10,
+    color: 'lightgray',
   },
 });
 

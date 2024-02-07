@@ -34,13 +34,11 @@ const RendementScreen = ({ data, graphdata, onBackToPortfolio }) => {
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={{ height: 50 }} />
 
       <SafeAreaView style={styles.container}>
 
         <SectionHeaderText text={"Rendementen"} />
-        <HistoricDataChart graphdata={graphdata} />
-        <SubheadingWithDescription subheading={'Resultaat sinds start'} description={'Dit is wat jouw beleggingen hebben opgeleverd sinds je begonnen bent met beleggen.'}/>
+        <SubheadingWithDescription subheading={'Sinds start'} description={'Dit is wat jouw beleggingen hebben opgeleverd sinds je begonnen bent met beleggen.'}/>
 
         <View style={styles.numberCardsRow}>
           <View style={styles.numberCardSmall}>
@@ -66,7 +64,7 @@ const RendementScreen = ({ data, graphdata, onBackToPortfolio }) => {
           </View>
         </View>
         
-        <SubheadingWithDescription subheading={'Overzicht per jaar'} description={'Klik op een jaar voor een volledig overzicht'}/>
+        <SubheadingWithDescription subheading={'Rendement per jaar'} description={'Klik op een jaar voor een volledig overzicht'}/>
         <WaardeOntwikkeling data={data.waardeontwikkeling} />
        
       </SafeAreaView>

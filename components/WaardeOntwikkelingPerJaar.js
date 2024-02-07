@@ -36,20 +36,23 @@ const styles = StyleSheet.create({
   container: {
   },
   card: {
-    backgroundColor: '#CFBAE1',
+    backgroundColor: '#rgba(95,95,108,1)',
     borderRadius: 10,
     padding: 10,
     width: 250,
     height: 220,
     marginRight: 10, // Adjust as needed
+    color: 'fff',
   },
   title: {
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 5,
+    color:'#fff',
   },
   item: {
     marginBottom: 3,
+    color:'#fff',
   },
 });
 

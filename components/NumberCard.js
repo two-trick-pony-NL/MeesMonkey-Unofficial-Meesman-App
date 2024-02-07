@@ -14,7 +14,7 @@ const NumberCard = ({ explainerText, bigNumber }) => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#384956',
+    backgroundColor: "#384956",
     borderRadius: 10,
     padding: 20,
     alignItems: 'left',

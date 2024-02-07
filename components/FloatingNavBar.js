@@ -28,13 +28,13 @@ const FloatingNavBar = ({ setActiveScreen }) => {
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    bottom: 30,
+    bottom: '3%',
     left: '5%',
     right: '5%',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#384956',
+    backgroundColor: 'rgba(29,179,255,1)',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 20,
