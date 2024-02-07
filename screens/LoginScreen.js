@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, ActivityIndicator, TouchableOpacity, Linking, Image } from 'react-native';
+import { View, Text,KeyboardAvoidingView, TextInput, Button, StyleSheet, ActivityIndicator, TouchableOpacity, Linking, Image } from 'react-native';
 import getAuthToken from '../api/AuthApi';
 
 
@@ -28,7 +28,7 @@ const LoginScreen = ({ onLogin }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView behavior='padding' style={styles.container}>
       <Image source={require('../assets/MeesmanIcon.png')} style={styles.logo} />
 
       <Text style={styles.title}>Login</Text>
@@ -59,7 +59,7 @@ const LoginScreen = ({ onLogin }) => {
       <TouchableOpacity onPress={handleWebLinkPress}>
         <Text style={styles.subtext}>Meer weten</Text>
       </TouchableOpacity>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 

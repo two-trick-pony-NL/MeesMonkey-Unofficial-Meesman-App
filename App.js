@@ -39,7 +39,7 @@ export default function App() {
       console.log("Trying to log the user in with token");
       try {
         console.log("Trying to fetch the existing token");
-        const storedToken = await AsyncStorage.getItem('authtoken');
+        const storedToken = await AsyncStorage.getItem('authtoke3n');
         if (storedToken) {
           console.log("Token found. Fetching data");
           setToken(storedToken);
