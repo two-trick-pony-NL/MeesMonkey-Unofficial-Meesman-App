@@ -3,12 +3,9 @@ import { ScrollView, Text, StyleSheet, View, SafeAreaView, Button} from 'react-n
 import HistoricDataChart from '../components/HistoricDataChart';
 import ThreeTileComponent from '../components/ThreeNumberCard';
 import NumbercardGradient from '../components/NumberCardGradient';
-import NumberCard from '../components/NumberCard';
-
 import SectionHeaderText from '../components/SectionHeaderText';
 import SubheadingWithDescription from '../components/SubheadingWithDescription';
-import RendementScreen from './RendementScreen';
-import SimpleComponent from '../components/simplecomponent';
+
 
 
 const HomeScreen = ({ data, graphdata}) => {

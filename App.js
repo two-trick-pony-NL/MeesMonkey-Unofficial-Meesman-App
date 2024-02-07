@@ -1,3 +1,4 @@
+import registerNNPushToken from 'native-notify';
 import React, { useState, useEffect } from 'react';
 import * as Sentry from '@sentry/react-native';
 import Authed from './screens/Authed';
@@ -9,8 +10,11 @@ Sentry.init({
   dsn: 'https://879cf8019f8f4d40f22f593feff7fa5f@o4506684609789952.ingest.sentry.io/4506684611035136',
 });
 
-const App = () => {
+export default function App() {
+  registerNNPushToken(19560, 'QhrNyqDacokZSd5xE7Abca');
   const [token, setToken] = useState(null);
+  const [biometricAuthenticated, setBiometricAuthenticated] = useState(false);
+
 
   const handleLogin = (newToken) => {
     // Handle the login action and store the token in AsyncStorage
@@ -46,6 +50,7 @@ const App = () => {
     };
 
     fetchStoredToken();
+    authenticateWithBiometrics();
   }, []);
 
   const authenticateWithBiometrics = async () => {
@@ -56,23 +61,30 @@ const App = () => {
 
       if (result.success) {
         console.log('Biometric authentication successful');
-        // You may want to fetch user data here if needed
+        // Fetch user data or perform additional actions on successful authentication
+        // For example: handleLogin(userToken);
+        setBiometricAuthenticated(true);
       } else {
         console.log('Biometric authentication failed');
+        // Handle authentication failure if needed
+        setBiometricAuthenticated(false);
       }
     } catch (error) {
       console.error('Error during biometric authentication:', error);
+      setBiometricAuthenticated(false);
     }
   };
 
-  // Check if a token is present
+  // We want both the token that represents the user as verify with biometrics before we let them into the app. 
   if (token) {
-    authenticateWithBiometrics();
-    return <Authed token={token} onLogout={onLogout} />;
+    if (biometricAuthenticated) {
+      return <Authed token={token} onLogout={onLogout} />;
+    } else {
+      // Handle authentication failure if needed
+      return <LoginScreen onLogin={handleLogin} />;
+    }
   } else {
-    
     return <LoginScreen onLogin={handleLogin} />;
   }
 };
 
-export default App;
