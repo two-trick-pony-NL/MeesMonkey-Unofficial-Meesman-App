@@ -1,9 +1,14 @@
-# Unofficial Meesman App 
-This is the repository for my unofficial version of a App for Meesman Indexbeleggen. Meesman does not offer a app of their own and thus I decided to build one. 
-I use a custom API endpoint that I also build by scraping mijn.meesman.nl, check the API here: https://github.com/two-trick-pony-NL/MeesmanAPI
+# Disclaimer: Unofficial Meesman App
 
-# App
-The app is built using Expo (react native) and should work on both Android and iOS. However I only tested on iOS. 
+This application is an unofficial version of an app for Meesman Indexbeleggen, created by [Your Name]. Meesman does not provide its own official app, prompting the development of this independent alternative. The app utilizes a custom API endpoint built by scraping data from mijn.meesman.nl. For details on the API, refer to the repository: [MeesmanAPI](https://github.com/two-trick-pony-NL/MeesmanAPI).
 
-# Known shortcomings:
-- If you have multiple accounts with meesman it only shows data for the first one. 
+## App Compatibility
+The app is constructed using Expo (React Native) and is designed to function on both Android and iOS platforms. However, thorough testing has been conducted primarily on iOS.
+
+## Known Shortcomings
+- The app may only display data for the first Meesman account if multiple accounts are associated.
+
+## Affiliation Disclosure
+It is important to note that [Your Name] has no affiliation with Meesman Indexbeleggen. This app is an independent project developed to enhance the user experience for Meesman investors. While efforts have been made to ensure accurate functionality, users are advised to exercise caution and carefully consider the known limitations mentioned above.
+
+By using this app, you acknowledge that it is an unofficial solution and [Your Name] is not liable for any inaccuracies, losses, or inconveniences that may arise from its use. Your feedback and suggestions for improvement are welcome.
