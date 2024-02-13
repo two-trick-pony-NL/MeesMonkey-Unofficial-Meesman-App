@@ -2,7 +2,7 @@
   "expo": {
     "name": "MeesmanUnofficial",
     "slug": "MeesmanUnofficial",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "orientation": "portrait",
     "icon": "./assets/MeesmanIcon.png",
     "userInterfaceStyle": "light",
