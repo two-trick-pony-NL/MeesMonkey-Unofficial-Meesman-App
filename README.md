@@ -10,7 +10,7 @@
 
 
 
-This application is an unofficial version of an app for Meesman Indexbeleggen, created by [Your Name]. Meesman does not provide its own official app, prompting the development of this independent alternative. The app utilizes a custom API endpoint built by scraping data from mijn.meesman.nl. For details on the API, refer to the repository: [MeesmanAPI](https://github.com/two-trick-pony-NL/MeesmanAPI).
+This application is an unofficial version of an app for Meesman Indexbeleggen, created by Peter van Doorn. Meesman does not provide its own official app, prompting the development of this independent alternative. The app utilizes a custom API endpoint built by scraping data from mijn.meesman.nl. For details on the API, refer to the repository: [MeesmanAPI](https://github.com/two-trick-pony-NL/MeesmanAPI).
 
 ## App Compatibility
 The app is constructed using Expo (React Native) and is designed to function on both Android and iOS platforms. However, thorough testing has been conducted primarily on iOS.
