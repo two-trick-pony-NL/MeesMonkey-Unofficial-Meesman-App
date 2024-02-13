@@ -7,6 +7,8 @@
 
 
 
+![Simulator Screenshot - iPhone 15 Pro - 2024-02-13 at 12 12 02](https://github.com/two-trick-pony-NL/MeesmanUnofficialApp/assets/71013416/70ac6468-ef67-4a4b-b4e2-12ad0500c29b)
+
 
 
 This application is an unofficial version of an app for Meesman Indexbeleggen, created by [Your Name]. Meesman does not provide its own official app, prompting the development of this independent alternative. The app utilizes a custom API endpoint built by scraping data from mijn.meesman.nl. For details on the API, refer to the repository: [MeesmanAPI](https://github.com/two-trick-pony-NL/MeesmanAPI).
