@@ -17,5 +17,5 @@ jobs:
 
       - name: Run CURL Command
         run: |
-          curl --location 'https://w1ofof2wuh.execute-api.eu-central-1.amazonaws.com/dev/sendpushmessagetoall?title=Meesman%20Investeringen%20zijn%20verwerkt&body=Al%20jouw%20beleggingen%20van%20afgelopen%20week%20zijn%20verwerkt.%20' \
+          curl --location 'https://w1ofof2wuh.execute-api.eu-central-1.amazonaws.com/dev/sendpushmessagetoall?title=Jouw%20Portefeuille%20is%20weer%20up%20to%20date&body=Al%20jouw%20transacties%20van%20vorige%20week%20zijn%20nu%20gereed.%20' \
           --header 'accept: application/json'
