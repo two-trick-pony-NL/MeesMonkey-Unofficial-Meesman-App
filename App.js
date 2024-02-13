@@ -1,16 +1,18 @@
-import registerNNPushToken from 'native-notify';
 import React, { useState, useEffect } from 'react';
 import * as Sentry from '@sentry/react-native';
 import Authed from './screens/Authed';
 import LoginScreen from './screens/LoginScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { usePushNotifications } from './usePushNotifications';
+
 
 Sentry.init({
   dsn: 'https://879cf8019f8f4d40f22f593feff7fa5f@o4506684609789952.ingest.sentry.io/4506684611035136',
 });
 
 export default function App() {
-  registerNNPushToken(19560, 'QhrNyqDacokZSd5xE7Abca');
+  const {expoPushToken} = usePushNotifications()
+  console.log(expoPushToken)
   const [token, setToken] = useState(null);
 
 
@@ -46,6 +48,7 @@ export default function App() {
         console.log("No token found. Sending the user to the login screen");
       }
     };
+
 
     fetchStoredToken();
   }, []);
