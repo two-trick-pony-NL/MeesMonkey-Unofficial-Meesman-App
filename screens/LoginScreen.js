@@ -24,7 +24,7 @@ const LoginScreen = ({ onLogin }) => {
   const handleWebLinkPress = () => {
     // Open the webpage when the subtext is pressed
     // Replace 'https://your-website.com' with your actual webpage URL
-    Linking.openURL('https://github.com/two-trick-pony-NL/MeesmanUnofficialApp');
+    Linking.openURL('https://github.com/two-trick-pony-NL/MeesMonkey-Unofficial-Meesman-App');
   };
 
   return (

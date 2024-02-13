@@ -15,7 +15,7 @@ const ProfileScreen = () => {
         Linking.openURL('https://github.com/two-trick-pony-NL/MeesmanAPI');
       };
       const handleOpenSourceLinkAPP = () => {
-        Linking.openURL('https://github.com/two-trick-pony-NL/MeesmanUnofficialApp');
+        Linking.openURL('https://github.com/two-trick-pony-NL/MeesMonkey-Unofficial-Meesman-App');
       };
 
 
