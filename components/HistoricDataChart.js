@@ -32,20 +32,14 @@ const HistoricDataChart = ({graphdata}) => {
   // Determine the time interval
   const interval = 'weekly'; // Change to 'minutes' or 'seconds' for different intervals
 
-  const labels = transformedData[0].timestamps.reduce((result, timestamp, index, array) => {
-    // Display only the first and last labels
-    if (index === 0 || index === array.length - 1) {
-      result.push(getTime(timestamp, interval));
-    }
-    return result;
-  }, []);
+
 
   return (
-    <View>
+    <View style={{ alignItems: 'center', justifyContent: 'center', margin:5 }}>
       <View >
         <LineChart
           data={{
-            legend: ["Aankoopprijs", "Huidige waarde"],
+            legend: ["Inleg", "Huidige waarde"],
             datasets: transformedData.map(({ amounts, color }) => ({
               data: amounts,
               color: (opacity = 1) => color,

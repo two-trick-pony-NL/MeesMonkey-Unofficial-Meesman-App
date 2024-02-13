@@ -21,6 +21,10 @@ const FloatingNavBar = ({ setActiveScreen }) => {
         <Icon name="view-list" size={30} color="white" />
         <Text style={styles.navText}>Transacties</Text>
       </TouchableOpacity>
+      <TouchableOpacity style={styles.navItem} onPress={() => handlePress('Profile')}>
+        <Icon name="information" size={30} color="white" />
+        <Text style={styles.navText}>Info</Text>
+      </TouchableOpacity>
     </View>
   );
 };

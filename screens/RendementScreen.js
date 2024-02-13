@@ -33,9 +33,9 @@ const RendementScreen = ({ data, graphdata, onBackToPortfolio }) => {
   const totalReturnWithTwoDecimal = (1 + totalReturnFloat/100).toFixed(2);
 
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
 
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView>
 
         <SectionHeaderText text={"Rendementen"} />
         <SubheadingWithDescription subheading={'Sinds start'} description={'Dit is wat jouw beleggingen hebben opgeleverd sinds je begonnen bent met beleggen.'}/>
@@ -46,14 +46,14 @@ const RendementScreen = ({ data, graphdata, onBackToPortfolio }) => {
           </View>
 
           <View style={styles.numberCardLarge}>
-            <NumberCard explainerText={'Winst'} bigNumber={'€ ' + totalOngerealiseerdResultaat} />
+            <NumberCard explainerText={'Resultaat'} bigNumber={'€ ' + totalOngerealiseerdResultaat} />
           </View>
         </View>
 
         <SubheadingWithDescription subheading={'Jouw geld aan het werk'} description={'Met een gemiddeld rendement van 7% kun je er op rekenen dat die €1 in ongeveer 10 jaar verdubbelt!'}/>
         <NumbercardGradient explainerText={'Elke €1 die jij investeerde is nu waard'} bigNumber={'€ ' + totalReturnWithTwoDecimal} />
 
-        <SubheadingWithDescription subheading={'Kosten'} description={'Beleggen is niet gratis, er zijn kosten per transactie en jaarlijkse kosten voor het beleggingsfonds waar je in investeert. Hier zie je het totaal sinds het openen van jouw rekening.'}/>
+        <SubheadingWithDescription subheading={'Kosten'} description={'Beleggen brengt ook kosten met zich mee. Hier zie je het totaal sinds het openen van jouw rekening.'}/>
         <View style={styles.numberCardsRow}>
           <View style={styles.numberCardSmall}>
           <NumberCard explainerText={'Fondskosten'} bigNumber={'€ ' + totalFondskosten} />

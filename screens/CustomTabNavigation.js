@@ -5,18 +5,21 @@ import RendementScreen from './RendementScreen';
 import SimpleComponent from '../components/simplecomponent';
 import TransactionTable from './DataTableScreen';
 import FloatingNavBar from '../components/FloatingNavBar';
+import ProfileScreen from './ProfileScreen';
 
-const CustomTabBar = (data) => {
+const CustomTabBar = (data, onLogout) => {
   const [activeScreen, setActiveScreen] = useState('Portfolio'); // Default screen
 
   const renderScreen = () => {
     switch (activeScreen) {
       case 'Portfolio':
-        return <HomeScreen data={data.data} graphdata={data.data['historic_data']} GoToTransactions={() => setActiveScreen('Transacties')} GoToRendementen={() => setActiveScreen('Rendementen')} />;
+        return <HomeScreen data={data.data} graphdata={data.data['historic_data']} onLogout={onLogout}  />;
       case 'Rendementen':
-        return <RendementScreen data={data['data']} graphdata={data.data['historic_data']} onBackToPortfolio={() => setActiveScreen('Portfolio')} />;
+        return <RendementScreen data={data['data']} graphdata={data.data['historic_data']}  />;
       case 'Transacties':
-        return <TransactionTable data={data.data['historic_data']} onBackToPortfolio={() => setActiveScreen('Portfolio')} />;
+        return <TransactionTable data={data.data['historic_data']} to_invest={data.data}  />;
+        case 'Profile':
+          return <ProfileScreen />;
       default:
         return null;
     }

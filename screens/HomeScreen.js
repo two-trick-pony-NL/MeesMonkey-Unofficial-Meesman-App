@@ -8,9 +8,12 @@ import SubheadingWithDescription from '../components/SubheadingWithDescription';
 
 
 
-const HomeScreen = ({ data, graphdata}) => {
+
+
+const HomeScreen = ({ data, graphdata }) => {
   const accountsData = data && data.accounts;
   const portefeuilleData = data && data["portefeuille"]
+
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -19,7 +22,7 @@ const HomeScreen = ({ data, graphdata}) => {
       <SectionHeaderText text={'Portfolio'}/>
       <HistoricDataChart graphdata={graphdata} />
 
-      <SubheadingWithDescription subheading={'Rekeningen'} description={'Dit is het saldo op jouw beleggingsrekeningen'}/>
+      <SubheadingWithDescription subheading={'Rekeningen'} description={'Het saldo op jouw beleggingsrekeningen'}/>
 
         {accountsData && accountsData.map(account => {
           const accountId = Object.keys(account)[0];
@@ -33,7 +36,7 @@ const HomeScreen = ({ data, graphdata}) => {
             />
           );
         })}
-      <SubheadingWithDescription subheading={'Samenstelling'} description={'Dit zijn de fondsen waarin je belegd'}/>
+      <SubheadingWithDescription subheading={'Samenstelling'} description={'De fondsen waarin je belegd'}/>
         {portefeuilleData.map((portefeuille, index) => {
           const {
             fund,
@@ -63,7 +66,9 @@ const HomeScreen = ({ data, graphdata}) => {
         })}
         
       </SafeAreaView>
+
       <View style={{ height: 200 }} />
+
     </ScrollView>
   );
 };
@@ -72,20 +77,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding:5,
-  },
-  greetingContainer: {
-    alignItems: 'center',
-    marginTop: 20,
-  },
-  greetingText: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'left'
-  },
-  tilesContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginTop: 20,
   },
   tile: {
     width: 100,

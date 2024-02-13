@@ -2,9 +2,11 @@ import React from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity,Button, SafeAreaView } from 'react-native';
 import SectionHeaderText from '../components/SectionHeaderText';
 import { DataTable } from 'react-native-paper';
+import PendingInvestment from '../components/Pending_Investment';
+import SubheadingWithDescription from '../components/SubheadingWithDescription';
 
 
-const TransactionTable = ({ data, onBackToPortfolio }) => {
+const TransactionTable = ({ data, to_invest }) => {
 
   const formatDate = (timestamp) => {
     const date = new Date(timestamp);
@@ -59,6 +61,20 @@ const TransactionTable = ({ data, onBackToPortfolio }) => {
     <SafeAreaView style={styles.container}>
       <ScrollView       showsVerticalScrollIndicator={false}>
         <SectionHeaderText text={"Transacties"}></SectionHeaderText>
+        <View style={{padding:5}}>
+        <SubheadingWithDescription
+          subheading={'Overzicht'}
+          description={'Meesman update de transacties op maandagavond. Houdt er rekening mee dat door (internationale) feestdagen het soms langer duurt om een inleg ook daadwerkelijk te beleggen. Raadpleeg mijn.meesman.nl voor actuele informatie.'}
+        />
+        </View>
+        <PendingInvestment data={to_invest}/>
+
+        <View style={{padding:5}}>
+        <SubheadingWithDescription
+          subheading={'Transacties'}
+        />
+        </View>
+
         <View style={styles.yearContainer}>
           <DataTable>
             <DataTable.Header>
