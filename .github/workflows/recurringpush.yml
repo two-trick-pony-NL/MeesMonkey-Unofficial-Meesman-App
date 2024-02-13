@@ -1,0 +1,19 @@
+name: Weekly CURL Request
+
+on:
+  schedule:
+    - cron: '*/1 * * * *'
+
+jobs:
+  run-curl-command:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Run CURL Command
+        run: |
+          curl --location 'https://w1ofof2wuh.execute-api.eu-central-1.amazonaws.com/dev/sendpushmessagetoall?title=Meesman%20Investeringen%20zijn%20verwerkt&body=Al%20jouw%20beleggingen%20van%20afgelopen%20week%20zijn%20verwerkt.%20' \
+          --header 'accept: application/json'
+
