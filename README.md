@@ -3,11 +3,10 @@
 <img src="https://github.com/two-trick-pony-NL/MeesmanUnofficialApp/assets/71013416/8fde4da7-5b18-4cfe-aadd-440d4f85ba80" height="400">
 <img src="https://github.com/two-trick-pony-NL/MeesmanUnofficialApp/assets/71013416/5c3f5419-1804-49b0-a543-ec3c8f03596f" height="400">
 <img src="https://github.com/two-trick-pony-NL/MeesmanUnofficialApp/assets/71013416/0b1d5fb8-108e-4d5a-8c61-ae43b43d55dc" height="400">
-<img src="https://github.com/two-trick-pony-NL/MeesmanUnofficialApp/assets/71013416/d975e81a-9383-4e14-a09d-58d286bb2c6d" height="400">
+<img src="https://github.com/two-trick-pony-NL/MeesmanUnofficialApp/assets/71013416/70ac6468-ef67-4a4b-b4e2-12ad0500c29b" height="400">
 
 
 
-![Simulator Screenshot - iPhone 15 Pro - 2024-02-13 at 12 12 02](https://github.com/two-trick-pony-NL/MeesmanUnofficialApp/assets/71013416/70ac6468-ef67-4a4b-b4e2-12ad0500c29b)
 
 
 
