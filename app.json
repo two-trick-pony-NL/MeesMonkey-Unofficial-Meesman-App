@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MeesmanUnofficial",
-    "slug": "MeesmanUnofficial",
+    "name": "MeesMonkey",
+    "slug": "MeesMonkey",
     "version": "1.0.7",
     "orientation": "portrait",
     "icon": "./assets/MeesmanIcon.png",
@@ -10,7 +10,7 @@
       [
         "expo-local-authentication",
         {
-          "faceIDPermission": "Allow Meesman to use Face ID."
+          "faceIDPermission": "Allow MeesMonkey to use Face ID."
         }
       ]
     ],
@@ -24,9 +24,9 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.petervandoorn.MeesmanUnofficial",
+      "bundleIdentifier": "com.petervandoorn.MeesMonkey",
       "infoPlist": {
-        "NSFaceIDUsageDescription": "Allow Meesman to use Face ID."
+        "NSFaceIDUsageDescription": "Allow MeesMonkey to use Face ID."
       }
     },
     "android": {

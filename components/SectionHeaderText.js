@@ -5,7 +5,7 @@ const SectionHeaderText = ({ text }) => {
   return (
     <View style={styles.container}>
       <View style={styles.inlineContainer}>
-        <Image source={require('../assets/elephant.png')} style={styles.inlineImage} />
+        <Image source={require('../assets/monkey.png')} style={styles.inlineImage} />
         <Text style={styles.text}>
           {text} 
         </Text>
