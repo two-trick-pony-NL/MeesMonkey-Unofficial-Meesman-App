@@ -21,3 +21,23 @@ The app is constructed using Expo (React Native) and is designed to function on 
 It is important to note that [Your Name] has no affiliation with Meesman Indexbeleggen. This app is an independent project developed to enhance the user experience for Meesman investors. While efforts have been made to ensure accurate functionality, users are advised to exercise caution and carefully consider the known limitations mentioned above.
 
 By using this app, you acknowledge that it is an unofficial solution and [Your Name] is not liable for any inaccuracies, losses, or inconveniences that may arise from its use. Your feedback and suggestions for improvement are welcome.
+
+# How to Run
+## Installation and Running Instructions
+
+### Prerequisites:
+- Node.js and npm installed on your machine. You can download them from [https://nodejs.org/](https://nodejs.org/).
+
+### Installation:
+- npm install -g expo-cli
+clone the repo
+- ```git clone https://github.com/two-trick-pony-NL/MeesmanUnofficialApp.git```
+  go into the folder
+- ```cd MeesmanUnofficialApp```
+install dependancies
+- ```npm install```
+Run the local server
+- ```npx expo start```
+
+
+
