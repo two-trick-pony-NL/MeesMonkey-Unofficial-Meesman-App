@@ -2,7 +2,7 @@ name: Weekly CURL Request
 
 on:
   schedule:
-    - cron: '*/1 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   run-curl-command:
