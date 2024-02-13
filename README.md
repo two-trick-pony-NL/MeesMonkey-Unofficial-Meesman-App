@@ -19,9 +19,9 @@ The app is constructed using Expo (React Native) and is designed to function on 
 - The app may only display data for the first Meesman account if multiple accounts are associated.
 
 ## Affiliation Disclosure
-It is important to note that [Your Name] has no affiliation with Meesman Indexbeleggen. This app is an independent project developed to enhance the user experience for Meesman investors. While efforts have been made to ensure accurate functionality, users are advised to exercise caution and carefully consider the known limitations mentioned above.
+It is important to note that I have no affiliation with Meesman Indexbeleggen. This app is an independent project developed to enhance the user experience for Meesman investors. While efforts have been made to ensure accurate functionality, users are advised to exercise caution and carefully consider the known limitations mentioned above.
 
-By using this app, you acknowledge that it is an unofficial solution and [Your Name] is not liable for any inaccuracies, losses, or inconveniences that may arise from its use. Your feedback and suggestions for improvement are welcome.
+By using this app, you acknowledge that it is an unofficial solution and that I am not liable for any inaccuracies, losses, or inconveniences that may arise from its use. Your feedback and suggestions for improvement are welcome, just open an issue.
 
 # How to Run
 ## Installation and Running Instructions
