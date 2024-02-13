@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
     margin: 5,
     padding: 10,
+    backgroundColor: '#000'
   },
   explainerText: {
     fontSize: 16,
