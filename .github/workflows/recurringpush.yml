@@ -1,4 +1,4 @@
-name: Weekly CURL Request
+name: Send Push Messages To All Users
 
 on:
   schedule:
@@ -15,7 +15,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Run CURL Command
+      - name: Sending Push Notifications
         run: |
-          curl --location 'https://w1ofof2wuh.execute-api.eu-central-1.amazonaws.com/dev/sendpushmessagetoall?title=Jouw%20Portefeuille%20is%20weer%20up%20to%20date&body=Al%20jouw%20transacties%20van%20vorige%20week%20zijn%20nu%20gereed.%20' \
+          curl --location 'https://w1ofof2wuh.execute-api.eu-central-1.amazonaws.com/dev/sendpushmessagetoall?title=Jouw%20Portefeuille%20is%20geupdate&body=Al%20jouw%20transacties%20van%20vorige%20week%20zijn%20nu%20verwerkt.%20' \
           --header 'accept: application/json'
