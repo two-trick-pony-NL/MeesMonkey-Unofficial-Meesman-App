@@ -2,7 +2,7 @@ name: Send Push Messages To All Users
 
 on:
   schedule:
-    - cron: "0 18 * * 5" #Every Monday 1915
+    - cron: "0 17 * * 5" #Every Monday 1915
 
 jobs:
   run-curl-command:
