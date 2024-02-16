@@ -40,13 +40,11 @@ const LoginScreen = ({ onLogin }) => {
   };
 
   return (
-    <View behavior="padding" style={styles.container}>
+    <KeyboardAvoidingView behavior="padding" style={styles.container}>
       <Image
         source={require("../assets/MeesmanIcon.png")}
         style={styles.logo}
       />
-
-      <Text style={styles.title}>Login</Text>
       <TextInput
         style={styles.input}
         placeholder="Gebruikersnaam"
@@ -69,7 +67,7 @@ const LoginScreen = ({ onLogin }) => {
           <ActivityIndicator size="large" color="white" />
         </View>
       )}
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
