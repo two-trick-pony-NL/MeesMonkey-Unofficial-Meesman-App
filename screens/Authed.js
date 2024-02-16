@@ -32,6 +32,7 @@ const Authed = ({ token, onLogout }) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      authenticateWithBiometrics();
       try {
         const response = await fetch(
           "https://w1ofof2wuh.execute-api.eu-central-1.amazonaws.com/dev/getmeesmandata",
@@ -48,7 +49,7 @@ const Authed = ({ token, onLogout }) => {
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
-        authenticateWithBiometrics(), setLoading(false);
+        setLoading(false);
       }
     };
 
@@ -59,8 +60,10 @@ const Authed = ({ token, onLogout }) => {
     <View style={{ flex: 1 }}>
       {loading ? (
         <LoadingIndicator />
-      ) : (
+      ) : biometricAuthenticated ? (
         <CustomTabBar data={data} onLogout={onLogout} />
+      ) : (
+        <LoadingIndicator />
       )}
     </View>
   );
