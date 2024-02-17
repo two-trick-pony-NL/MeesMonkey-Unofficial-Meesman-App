@@ -51,7 +51,7 @@ install dependancies
 Run the local server
 - ```npx expo start```
 
-# How MeesMonkey handles your sensetive data
+# How MeesMonkey handles your sensitive data
 MeesMonkey uses security best practices. We're very aware that your username and password and financial data are sensitive and as a consequence we are very carefull with that data. Also note that we are MeesMonkey users ourself and also want to protect our financial data as good as we can.
 
 Therefor we decided on the following design principles: 
