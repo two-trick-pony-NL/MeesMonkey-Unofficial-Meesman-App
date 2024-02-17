@@ -9,7 +9,7 @@
 <img src="https://github.com/two-trick-pony-NL/MeesMonkey-Unofficial-Meesman-App/assets/71013416/7c5f8246-e59c-410a-8342-43de5e2c61ff" height="400">
 <img src="https://github.com/two-trick-pony-NL/MeesMonkey-Unofficial-Meesman-App/assets/71013416/8a45a324-bad9-4043-9b44-211260f31fb1" height="400">
 
-Because Meesman Indexbeleggen does not provide their own app, I decided to build one for myself independantly. The app utilizes a custom API endpoint that can scrape account details from mijn.meesman.nl. The whole app is designed using best practices in security so we never store raw credentials, security keys are encrypted and stored on your local device and all data is sent over https. Feel free to check out the code on how the app works. For details on the API, refer to the repository: [MeesmanAPI](https://github.com/two-trick-pony-NL/MeesmanAPI).
+Because Meesman Indexbeleggen does not provide their own app, I decided to build one for myself independently. The app utilizes a custom API endpoint that can scrape account details from mijn.meesman.nl. The whole app is designed using best practices in security so we never store raw credentials, security keys are encrypted and stored on your local device and all data is sent over https. Feel free to check out the code on how the app works. For details on the API, refer to the repository: [MeesmanAPI](https://github.com/two-trick-pony-NL/MeesmanAPI).
 
 ## Release to app stores: 
 I intend to use the app for personal use, but if there is enough demand I can release the app through the appstores. Please let me know you are interested in this issue: https://github.com/two-trick-pony-NL/MeesMonkey-Unofficial-Meesman-App/issues/2 
@@ -55,17 +55,17 @@ Run the local server
 ### Security Overview
 MeesMonkey uses security best practices. We're very aware that your username and password and financial data are sensitive and as a consequence we are very carefull with that data. 
 By design we decided that: 
-1. We don't store any of your data --> Your data is stored locally on your device
-2. We don't track any of your data --> So we have 0 analytics tools installed (except for Sentry that reports crashes of the app)
-3. We use best practices in security:
-- EAS 128 Encryption
+1. We don't store any of your data anywhere --> Any persistant data stays with you locally on your device
+2. We don't track any of your data --> There are 0 analytics tools installed (except for Sentry that reports crashes of the app anonymously )
+4. We use best practices in security:
+- EAS 128 Encryption using Fernet Tokens
 - All communication over HTTPS
 - We do not store your credentials on our server and do not track you as a user. 
-- Your credentials are stored as a encrypted token on your local device and are encrypted using Fernet.
-- If you want to stop using MeesMonkey all you have to do is delete the app. This will delete the encrypted token from your device.
-
+- Your credentials are stored as a encrypted token on your local device.
+**- If you want to stop using MeesMonkey all you have to do is delete the app. This will delete the encrypted token from your device.**
+  
 ### Authentication in code
-If you want to reference our security implementation in code then please check out the following code:
+If you want to review our security implementation in code then please check out the following code. Feel free to open an issue if there is something you'd like to see improved.
 - Passing usercredentials in the app: [AuthApi.js]([url](https://github.com/two-trick-pony-NL/MeesMonkey-Unofficial-Meesman-App/blob/main/api/AuthApi.js))
 - Storing the AuthToken locally in the app: [App.js]([url](https://github.com/two-trick-pony-NL/MeesMonkey-Unofficial-Meesman-App/blob/main/App.js))
 - Encrypting and decrypting usercredentials without storing them on the server: [Authentication.py]([url](https://github.com/two-trick-pony-NL/MeesmanAPI/blob/main/authentication.py))
