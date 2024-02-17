@@ -58,6 +58,7 @@ By design we decided that:
 1. We don't store any of your data anywhere --> Any persistant data stays with you locally on your device
 2. We don't track any of your data --> There are 0 analytics tools installed (except for Sentry that reports crashes of the app anonymously )
 4. We use best practices in security:
+- The app itself is locked with Biometrics (FaceID on iOS)
 - EAS 128 Encryption using Fernet Tokens
 - All communication over HTTPS
 - We do not store your credentials on our server and do not track you as a user. 
