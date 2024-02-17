@@ -41,8 +41,8 @@ Run the local server
 - ```npx expo start```
 
 # How MeesMonkey handles your Username and Password:
-![Artboard](https://github.com/two-trick-pony-NL/MeesMonkey-Unofficial-Meesman-App/assets/71013416/49cb433f-2a41-49d9-ae05-098e328de1eb)
 
+![Artboard](https://github.com/two-trick-pony-NL/MeesMonkey-Unofficial-Meesman-App/assets/71013416/b7e0f0e0-5023-47cc-a8de-25172e7b960c)
 
 
 
