@@ -15,4 +15,5 @@ jobs:
       - name: Sending Push Notifications
         run: |
           curl -X 'POST' --location 'https://w1ofof2wuh.execute-api.eu-central-1.amazonaws.com/dev/sendpushmessagetoall?title=Jouw%20Portefeuille%20is%20geupdate&body=Al%20jouw%20transacties%20van%20vorige%20week%20zijn%20nu%20verwerkt%20door%20Meesman.' \
-          --header 'accept: application/json'
+          --header 'accept: application/json' \
+          --header "apikey: ${{ secrets.PUSH_API_KEY }}"

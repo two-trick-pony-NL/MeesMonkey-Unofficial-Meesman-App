@@ -15,4 +15,5 @@ jobs:
       - name: Sending Push Notifications
         run: |
           curl --location --request POST 'https://w1ofof2wuh.execute-api.eu-central-1.amazonaws.com/dev/sendpushmessagetoall?title=Handelsweek%20afgesloten&body=Alle%20transacties%20worden%20nu%20verwerkt%20en%20zijn%20maandag%20om%2019%3A00%20uur%20zichtbaar%20in%20jouw%20app.' \
-          --header 'accept: application/json'
+          --header 'accept: application/json' \
+          --header "apikey: ${{ secrets.PUSH_API_KEY }}"
