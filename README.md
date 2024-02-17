@@ -52,15 +52,17 @@ Run the local server
 - ```npx expo start```
 
 # How MeesMonkey handles your sensetive data
-MeesMonkey uses security best practices. We're very aware that your username and password and financial data are sensitive and as a consequence we are very carefull with that data. 
-By design we decided that: 
-1. We don't store any of your data anywhere --> Any persistant data stays with you locally on your device
+MeesMonkey uses security best practices. We're very aware that your username and password and financial data are sensitive and as a consequence we are very carefull with that data. Also note that we are MeesMonkey users ourself and also want to protect our financial data as good as we can.
+
+Therefor we decided on the following design principles: 
+1. **We** don't store any of your data anywhere --> Any persistant data is stored with you, encrypted, **on your device**
 2. We don't track any of your data --> There are 0 analytics tools installed (except for Sentry that reports crashes of the app anonymously )
 4. We use best practices in security:
 - The app itself is locked with Biometrics (FaceID on iOS)
 - EAS 128 Encryption using Fernet Tokens
 - All communication over HTTPS
-- We do not store your credentials on our server and do not track you as a user. 
+- Tokens and Credentials are stored in the Headers and not in URL's.
+- We don't store raw passwords anywhere
 - Your credentials are stored as a encrypted token on your local device.
 **- If you want to stop using MeesMonkey all you have to do is delete the app. This will delete the encrypted token from your device.**
   
