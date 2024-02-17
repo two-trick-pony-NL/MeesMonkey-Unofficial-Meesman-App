@@ -43,9 +43,9 @@ By using this app, you acknowledge that it is an unofficial solution and that I 
 ### Installation:
 - npm install -g expo-cli
 clone the repo
-- ```git clone https://github.com/two-trick-pony-NL/MeesmanUnofficialApp.git```
+- ```git clone https://github.com/two-trick-pony-NL/MeesMonkey-Unofficial-Meesman-App.git```
   go into the folder
-- ```cd MeesmanUnofficialApp```
+- ```cd MeesMonkey```
 install dependancies
 - ```npm install```
 Run the local server
