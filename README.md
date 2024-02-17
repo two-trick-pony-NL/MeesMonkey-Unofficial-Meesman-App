@@ -68,9 +68,9 @@ Therefor we decided on the following design principles:
   
 ### Authentication in code
 If you want to review our security implementation in code then please check out the following code. Feel free to open an issue if there is something you'd like to see improved.
-- Passing usercredentials in the app: [AuthApi.js]([url](https://github.com/two-trick-pony-NL/MeesMonkey-Unofficial-Meesman-App/blob/main/api/AuthApi.js))
-- Storing the AuthToken locally in the app: [App.js]([url](https://github.com/two-trick-pony-NL/MeesMonkey-Unofficial-Meesman-App/blob/main/App.js))
-- Encrypting and decrypting usercredentials without storing them on the server: [Authentication.py]([url](https://github.com/two-trick-pony-NL/MeesmanAPI/blob/main/authentication.py))
+- Passing usercredentials in the app: AuthApi.js ([here](https://github.com/two-trick-pony-NL/MeesMonkey-Unofficial-Meesman-App/blob/main/api/AuthApi.js))
+- Storing the AuthToken locally in the app: app.js ([here](https://github.com/two-trick-pony-NL/MeesMonkey-Unofficial-Meesman-App/blob/main/App.js))
+- Encrypting and decrypting usercredentials without storing them on the server: authentication.py ([here.py](https://github.com/two-trick-pony-NL/MeesmanAPI/blob/main/authentication.py))
 
 ### Schematic on authentication
 ![Artboard](https://github.com/two-trick-pony-NL/MeesMonkey-Unofficial-Meesman-App/assets/71013416/b7e0f0e0-5023-47cc-a8de-25172e7b960c)
