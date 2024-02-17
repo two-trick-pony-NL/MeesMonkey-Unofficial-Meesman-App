@@ -1,36 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import * as Sentry from '@sentry/react-native';
-import Authed from './screens/Authed';
-import LoginScreen from './screens/LoginScreen';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { usePushNotifications } from './usePushNotifications';
-
+import React, { useState, useEffect } from "react";
+import * as Sentry from "@sentry/react-native";
+import Authed from "./screens/Authed";
+import LoginScreen from "./screens/LoginScreen";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { usePushNotifications } from "./api/usePushNotifications";
 
 Sentry.init({
-  dsn: 'https://879cf8019f8f4d40f22f593feff7fa5f@o4506684609789952.ingest.sentry.io/4506684611035136',
+  dsn: "https://879cf8019f8f4d40f22f593feff7fa5f@o4506684609789952.ingest.sentry.io/4506684611035136",
 });
 
 export default function App() {
-  const {expoPushToken} = usePushNotifications()
-  console.log(expoPushToken)
+  const { expoPushToken } = usePushNotifications();
+  console.log(expoPushToken);
   const [token, setToken] = useState(null);
-
 
   const handleLogin = (newToken) => {
     // Handle the login action and store the token in AsyncStorage
     setToken(newToken);
-    AsyncStorage.setItem('authtoken', newToken);
+    AsyncStorage.setItem("authtoken", newToken);
   };
 
   const onLogout = async () => {
     console.log("Logout hit");
     try {
       setToken(null);
-      await AsyncStorage.removeItem('authtoken');
-      console.log('Token cleared successfully');
-      console.log('Logging user out');
+      await AsyncStorage.removeItem("authtoken");
+      console.log("Token cleared successfully");
+      console.log("Logging user out");
     } catch (error) {
-      console.error('Error clearing token:', error);
+      console.error("Error clearing token:", error);
     }
   };
 
@@ -39,7 +37,7 @@ export default function App() {
       console.log("Trying to log the user in with token");
       try {
         console.log("Trying to fetch the existing token");
-        const storedToken = await AsyncStorage.getItem('authtoken');
+        const storedToken = await AsyncStorage.getItem("authtoken");
         if (storedToken) {
           console.log("Token found. Fetching data");
           setToken(storedToken);
@@ -49,17 +47,13 @@ export default function App() {
       }
     };
 
-
     fetchStoredToken();
   }, []);
 
-
-  // We want both the token that represents the user as verify with biometrics before we let them into the app. 
+  // We want both the token that represents the user as verify with biometrics before we let them into the app.
   if (token) {
-      return <Authed token={token} onLogout={onLogout} />;
-
+    return <Authed token={token} onLogout={onLogout} />;
   } else {
     return <LoginScreen onLogin={handleLogin} />;
   }
-};
-
+}
