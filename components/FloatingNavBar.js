@@ -1,6 +1,6 @@
-import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import React from "react";
+import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const FloatingNavBar = ({ setActiveScreen }) => {
   const handlePress = (screen) => {
@@ -9,21 +9,33 @@ const FloatingNavBar = ({ setActiveScreen }) => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.navItem} onPress={() => handlePress('Portfolio')}>
+      <TouchableOpacity
+        style={styles.navItem}
+        onPress={() => handlePress("Portfolio")}
+      >
         <Icon name="home" size={30} color="white" />
         <Text style={styles.navText}>Portfolio</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.navItem} onPress={() => handlePress('Rendementen')}>
+      <TouchableOpacity
+        style={styles.navItem}
+        onPress={() => handlePress("Rendementen")}
+      >
         <Icon name="finance" size={30} color="white" />
         <Text style={styles.navText}>Rendement</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.navItem} onPress={() => handlePress('Transacties')}>
+      <TouchableOpacity
+        style={styles.navItem}
+        onPress={() => handlePress("Transacties")}
+      >
         <Icon name="view-list" size={30} color="white" />
         <Text style={styles.navText}>Transacties</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.navItem} onPress={() => handlePress('Profile')}>
-        <Icon name="information" size={30} color="white" />
-        <Text style={styles.navText}>Info</Text>
+      <TouchableOpacity
+        style={styles.navItem}
+        onPress={() => handlePress("Profile")}
+      >
+        <Icon name="application-brackets" size={30} color="white" />
+        <Text style={styles.navText}>MeesMonkey</Text>
       </TouchableOpacity>
     </View>
   );
@@ -31,26 +43,26 @@ const FloatingNavBar = ({ setActiveScreen }) => {
 
 const styles = StyleSheet.create({
   container: {
-    position: 'absolute',
-    bottom: '3%',
-    left: '5%',
-    right: '5%',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    backgroundColor: 'rgba(29,179,255,1)',
+    position: "absolute",
+    bottom: "3%",
+    left: "5%",
+    right: "5%",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    backgroundColor: "rgba(29,179,255,1)",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 20,
   },
   navItem: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
   },
   navText: {
     fontSize: 10,
-    fontWeight: 'bold',
-    color: 'white',
+    fontWeight: "bold",
+    color: "white",
   },
 });
 

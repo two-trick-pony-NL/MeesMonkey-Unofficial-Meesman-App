@@ -12,7 +12,8 @@
         {
           "faceIDPermission": "Allow MeesMonkey to use Face ID."
         }
-      ]
+      ],
+      "expo-secure-store"
     ],
     "splash": {
       "image": "./assets/MeesmanSplash.png",
@@ -25,6 +26,9 @@
       "bundleIdentifier": "com.petervandoorn.MeesMonkey",
       "infoPlist": {
         "NSFaceIDUsageDescription": "Allow MeesMonkey to use Face ID."
+      },
+      "config": {
+        "usesNonExemptEncryption": false
       }
     },
     "android": {
@@ -35,7 +39,8 @@
       "permissions": [
         "android.permission.USE_BIOMETRIC",
         "android.permission.USE_FINGERPRINT"
-      ]
+      ],
+      "package": "com.petervandoorn.MeesMonkey"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -44,6 +49,12 @@
       "eas": {
         "projectId": "bd574d3f-1d23-4374-af3c-feb4a65faec6"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/bd574d3f-1d23-4374-af3c-feb4a65faec6"
     }
   }
 }

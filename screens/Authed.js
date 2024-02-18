@@ -61,7 +61,7 @@ const Authed = ({ token, onLogout }) => {
       {loading ? (
         <LoadingIndicator />
       ) : biometricAuthenticated ? (
-        <CustomTabBar data={data} onLogout={onLogout} />
+        <CustomTabBar data={data} token={token} onLogout={onLogout} />
       ) : (
         <LoadingIndicator />
       )}

@@ -1,13 +1,19 @@
-import React from 'react';
-import { View, StyleSheet, Text, ScrollView, TouchableOpacity,Button, SafeAreaView } from 'react-native';
-import SectionHeaderText from '../components/SectionHeaderText';
-import { DataTable } from 'react-native-paper';
-import PendingInvestment from '../components/Pending_Investment';
-import SubheadingWithDescription from '../components/SubheadingWithDescription';
-
+import React from "react";
+import {
+  View,
+  StyleSheet,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  Button,
+  SafeAreaView,
+} from "react-native";
+import SectionHeaderText from "../components/SectionHeaderText";
+import { DataTable } from "react-native-paper";
+import PendingInvestment from "../components/Pending_Investment";
+import SubheadingWithDescription from "../components/SubheadingWithDescription";
 
 const TransactionTable = ({ data, to_invest }) => {
-
   const formatDate = (timestamp) => {
     const date = new Date(timestamp);
     const today = new Date();
@@ -15,9 +21,9 @@ const TransactionTable = ({ data, to_invest }) => {
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
     if (diffDays === 0) {
-      return 'Today';
+      return "Today";
     } else if (diffDays === 1) {
-      return 'Yesterday';
+      return "Yesterday";
     } else {
       return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
     }
@@ -59,20 +65,20 @@ const TransactionTable = ({ data, to_invest }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView       showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <SectionHeaderText text={"Transacties"}></SectionHeaderText>
-        <View style={{padding:5}}>
-        <SubheadingWithDescription
-          subheading={'Overzicht'}
-          description={'Meesman update de transacties op maandagavond. Houdt er rekening mee dat door (internationale) feestdagen het soms langer duurt om een inleg ook daadwerkelijk te beleggen. Raadpleeg mijn.meesman.nl voor actuele informatie.'}
-        />
+        <View>
+          <SubheadingWithDescription
+            subheading={"Overzicht"}
+            description={
+              "Meesman update de transacties op maandagavond. Houdt er rekening mee dat door (internationale) feestdagen het soms langer duurt om een inleg ook daadwerkelijk te beleggen. Raadpleeg mijn.meesman.nl voor actuele informatie."
+            }
+          />
         </View>
-        <PendingInvestment data={to_invest}/>
+        <PendingInvestment data={to_invest} />
 
-        <View style={{padding:5}}>
-        <SubheadingWithDescription
-          subheading={'Transacties'}
-        />
+        <View style={{ padding: 5 }}>
+          <SubheadingWithDescription subheading={"Transacties"} />
         </View>
 
         <View style={styles.yearContainer}>
@@ -82,42 +88,67 @@ const TransactionTable = ({ data, to_invest }) => {
               <DataTable.Title numeric>Storting</DataTable.Title>
               <DataTable.Title numeric>Totaal</DataTable.Title>
             </DataTable.Header>
-            {Object.entries(mergedData).slice().reverse().map(([formattedDate, values], index, array) => {
-              const nextValue = getNextRowValue(index, array);
+            {Object.entries(mergedData)
+              .slice()
+              .reverse()
+              .map(([formattedDate, values], index, array) => {
+                const nextValue = getNextRowValue(index, array);
 
-              // Calculate Inleg by subtracting Value 1 from the next row's Value 1
-              const inleg = values[0] - nextValue;
+                // Calculate Inleg by subtracting Value 1 from the next row's Value 1
+                const inleg = values[0] - nextValue;
 
-              // Determine text color based on the value of 'inleg'
-              const saldoColor = inleg < 0 ? 'red' : 'green';
+                // Determine text color based on the value of 'inleg'
+                const saldoColor = inleg < 0 ? "red" : "green";
 
-              // Determine text color based on the value of 'Rendement'
-              const rendementColor = (values[1] - values[0]) < 0 ? 'red' : 'green';
+                // Determine text color based on the value of 'Rendement'
+                const rendementColor =
+                  values[1] - values[0] < 0 ? "red" : "green";
 
-              return (
-                <DataTable.Row key={index} style={styles.itemContainer}>
-                  <DataTable.Cell>
-                    <Text style={{ fontWeight: 'bold' }}>
-                      {formattedDate}
-                    </Text>
-                  </DataTable.Cell>
-                  <DataTable.Cell numeric>
-                    <Text style={{ fontWeight: 'bold', fontSize: 20, color: saldoColor }}>
-                      {formatCurrency(inleg)}
-                    </Text>
-                  </DataTable.Cell>
-                  <DataTable.Cell numeric>
-                    <Text style={{ justifyContent: 'center' }}>
-                      <Text style={{ fontWeight: '300', fontSize: 10 }}>Rendement: </Text>
-                      <Text style={{ fontWeight: '300', fontSize: 10, color: rendementColor }}>{formatCurrency(values[1] - values[0])}</Text>{'\n'}
-                      <Text style={{ fontWeight: '300', fontSize: 10 }}>Saldo: {formatCurrency(values[1])}</Text>{'\n'}
-                      <Text style={{ fontWeight: '300', fontSize: 10 }}>Inleg: {formatCurrency(values[0])}</Text>
-
-                    </Text>
-                  </DataTable.Cell>
-                </DataTable.Row>
-              );
-            })}
+                return (
+                  <DataTable.Row key={index} style={styles.itemContainer}>
+                    <DataTable.Cell>
+                      <Text style={{ fontWeight: "bold" }}>
+                        {formattedDate}
+                      </Text>
+                    </DataTable.Cell>
+                    <DataTable.Cell numeric>
+                      <Text
+                        style={{
+                          fontWeight: "bold",
+                          fontSize: 20,
+                          color: saldoColor,
+                        }}
+                      >
+                        {formatCurrency(inleg)}
+                      </Text>
+                    </DataTable.Cell>
+                    <DataTable.Cell numeric>
+                      <Text style={{ justifyContent: "center" }}>
+                        <Text style={{ fontWeight: "300", fontSize: 10 }}>
+                          Rendement:{" "}
+                        </Text>
+                        <Text
+                          style={{
+                            fontWeight: "300",
+                            fontSize: 10,
+                            color: rendementColor,
+                          }}
+                        >
+                          {formatCurrency(values[1] - values[0])}
+                        </Text>
+                        {"\n"}
+                        <Text style={{ fontWeight: "300", fontSize: 10 }}>
+                          Saldo: {formatCurrency(values[1])}
+                        </Text>
+                        {"\n"}
+                        <Text style={{ fontWeight: "300", fontSize: 10 }}>
+                          Inleg: {formatCurrency(values[0])}
+                        </Text>
+                      </Text>
+                    </DataTable.Cell>
+                  </DataTable.Row>
+                );
+              })}
           </DataTable>
         </View>
       </ScrollView>
@@ -127,19 +158,19 @@ const TransactionTable = ({ data, to_invest }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 50,
     paddingHorizontal: 10,
+    padding: 5,
   },
   headerText: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 20,
   },
   yearContainer: {
     marginBottom: 20,
   },
   yearText: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 16,
     marginBottom: 10,
   },
