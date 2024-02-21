@@ -2,7 +2,7 @@
   "expo": {
     "name": "MeesMonkey",
     "slug": "MeesMonkey",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "orientation": "portrait",
     "icon": "./assets/MeesmanIcon.png",
     "userInterfaceStyle": "light",

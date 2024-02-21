@@ -80,12 +80,13 @@ export const usePushNotifications = () => {
 
       const response = await fetch(
         "https://w1ofof2wuh.execute-api.eu-central-1.amazonaws.com/dev/registerpushtoken?token=" +
-          token,
+          token.data,
         requestOptions,
       );
 
       if (response.ok) {
         console.log("Expo Push Token registered successfully");
+        console.log(token);
       } else {
         console.error("Failed to register Expo Push Token");
       }
